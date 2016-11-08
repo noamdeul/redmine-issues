@@ -1,0 +1,409 @@
+html, body {
+	width:100%;
+	height:100%;
+	margin: 0px;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+body{
+    background-color:#303038;
+    font-family: 'Oswald', sans-serif;
+}
+
+#background-container {
+    position: absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+}
+
+#background {
+	position: absolute;
+	text-align: center;
+    width:100%;
+    height:100%;
+	background-image: url("../images/pattern.svg");
+    background-repeat: repeat;
+	background-size: 50vw auto;
+	-webkit-animation-duration: 100s;
+    -webkit-animation-name: slidein;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+    opacity:.15;
+}
+
+@-webkit-keyframes "slidein" {
+ 25% {
+   -webkit-transform: scale(1.5) translate3d(-200px, 0px, 0px);
+   transform: scale(1.5) translate3d(-200px, 0px, 0px);
+ }
+ 50% {
+   -webkit-transform: scale(1) translate3d(0px, 0px, 0px);
+   transform: scale(1) translate3d(0px, 0px, 0px);
+ }
+ 75% {
+   -webkit-transform: scale(1.5) translate3d(+200px, 0px, 0px);
+   transform: scale(1.5) translate3d(+200px, 0px, 0px);
+ }
+}
+
+#container-gradient {
+    position: absolute;
+	width: 100%;
+	height: 100%;
+    left:0px;
+    top:0px;
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 50%,rgba(0,0,0,.7) 100%);
+    z-index:0;
+	   -webkit-transform: translateZ(0);
+      -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      -o-transform: translateZ(0);
+      transform: translateZ(0);
+}
+
+/*school calendar header*/
+p.header {
+    text-align: left;
+    font-weight: 800;
+    height:35%;
+    font-size:38px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 50px;
+    line-height: 165%;
+    color: #fff;
+}
+
+#header1 {
+    -webkit-animation-duration: 20s;
+    -webkit-animation-name: fade1;
+    -webkit-animation-iteration-count: infinite;
+}
+
+#header2 {
+    -webkit-animation-duration: 20s;
+    -webkit-animation-name: fade2;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.cornered {
+    position:absolute;
+    margin-top: 5%;
+    left: 5%;
+    width: 380px;
+    height: 0px;
+    border-bottom: 62px solid #1f99d5;
+    border-right: 32px solid transparent;
+    -webkit-box-shadow: -7px 7px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*left content*/
+#left-content1 {
+    width:60%;
+    height:90%;
+    top:20%;
+    left:5%;
+    position:absolute;	
+    z-index:2;
+	-webkit-animation-duration: 20s;
+	-webkit-animation-name: fade1;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#left-content2 {
+    width:60%;
+    height:90%;
+    top:20%;
+    left:5%;
+    position:absolute;	
+    z-index:2;
+	-webkit-animation-duration: 20s;
+	-webkit-animation-name: fade2;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#right-container1 {
+	position: absolute;
+    width:100%;
+    height:100%;
+	-webkit-animation-duration: 20s;
+	-webkit-animation-name: fade1;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#right-container2 {
+	position: absolute;
+    width:100%;
+    height:100%;
+	-webkit-animation-duration: 20s;
+	-webkit-animation-name: fade2;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes fade1 {
+	0% {opacity: 0;}
+	5% {opacity: 1;}
+	45% {opacity: 1;}
+	50% {opacity: 0;}
+	100% {opacity: 0;}
+}
+
+@-webkit-keyframes fade2 {
+	0% {opacity: 0;}	
+	50% {opacity: 0;}
+    55% {opacity: 1;}
+	95% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+.event {
+  width:100%;
+    height:18%;
+    top:0%;
+    left:0%;
+    position:relative;
+    margin-top: 0%;
+    z-index:2;
+}
+
+.date {
+  width:15%;
+    height:100%;
+    top:0%;
+    left:0%;
+    position:relative;
+    margin-top: 5%;
+    z-index:3;
+}
+.description {
+    width:95%;
+    height:100%;
+    top:0%;
+    left:15%;
+    position:absolute;
+    z-index:3;
+}
+
+p.day {
+    font-family: 'Swanky and Moo Moo', cursive;
+    text-align: center;
+    height:65%;
+    line-height: 98%;
+    margin-top: 0px;
+    color: #fff;
+    font-size:20px;
+}
+
+p.month {
+    font-family: 'Swanky and Moo Moo', cursive;
+    text-align: center;
+    height:35%;
+    font-size:45px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 90%;
+    color: #feb423;
+}
+
+p.title {
+    text-align: left;
+    height:65%;
+    font-size:46px;
+    line-height: 140%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    color: #fff;
+}
+
+p.time {
+    font-family: 'Swanky and Moo Moo', cursive;
+    text-align: left;
+    height:35%;
+    font-size:34px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 5%;
+    line-height: 90%;
+    color: #1f99d5;
+}
+
+/*right content images*/
+.skew {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transform: skew(25deg);
+    overflow: hidden;
+    margin-left: 65%;
+    z-index:4;
+    -webkit-box-shadow: -7px 7px 5px 0px rgba(0, 0, 0, 0.2);	
+}
+
+.skew img {
+    transform: skew(-25deg);
+    position:relative;
+    z-index:4;
+    margin-left: -25%;
+    height:100%;
+    width:65%;
+  }
+
+/* media querry for 1280x850 and 1360x768*/
+	@media only screen and (min-width: 1280px) {
+        p.day {
+            font-size:94px;
+        }
+
+        p.month {
+            font-size:52px;
+        }
+
+        p.title {
+            font-size:58px;
+        }
+
+        p.time {
+            font-size:42px;
+        }
+
+        p.header {
+            font-size:48px;   
+        }
+        .cornered {
+            width: 460px;
+            border-bottom: 80px solid #1f99d5;
+            border-right: 40px solid transparent;
+        }
+
+    }
+
+
+/* media querry for 1920x1080*/
+	@media only screen and (min-width: 1920px) {
+        p.day {
+            font-size:140px;
+        }
+
+        p.month {
+            font-size:90px;
+        }
+
+        p.title {
+            font-size:80px;
+        }
+
+        p.time {
+            font-size:68px;
+        }
+
+        p.header {
+            font-size:68px;   
+        }
+        .cornered {
+            width: 610px;
+            border-bottom: 110px solid #1f99d5;
+            border-right: 60px solid transparent;
+        }
+
+    }
+
+/* media querry for 3840x2160*/
+	@media only screen and (min-width: 3840px) {
+        p.day {
+            font-size:240px;
+        }
+
+        p.month {
+            font-size:180px;
+        }
+
+        p.title {
+            font-size:160px;
+        }
+
+        p.time {
+            font-size:136px;
+        }
+
+        p.header {
+            font-size:136px;   
+        }
+        .cornered {
+            width: 1220px;
+            border-bottom: 220px solid #1f99d5;
+            border-right: 120px solid transparent;
+        }
+        .skew img {
+            height:2160px;
+        }  
+    }
+
+/* footer icons */
+#github {
+	 width:20%;
+	 height:4%;
+	 left:10%;
+	 top:90%;
+	 z-index:4;
+	 margin-left:-1%;
+	 position:absolute;
+	 z-index:4;
+}
+	
+#gitbtn {
+	color:white;
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;	
+	text-decoration: none;
+	font-size:25px;
+	opacity:.5;
+	z-index:4;
+}
+
+	@media only screen and (min-width: 1280px) {
+	    #gitbtn {
+			font-size:25px;
+	    }
+	}
+	
+	/* 1360x768 */
+	@media only screen and (min-width: 1360px) {
+	    #gitbtn {
+			font-size:24px;
+	    }
+	}
+	
+	/* 1920x1080*/
+	@media only screen and (min-width: 1920px) {	    
+        #gitbtn {
+			font-size: 34px;
+	    }
+	}
+	
+	/* 3840x2160 */
+	@media screen and (min-width: 2200px) {
+	    #gitbtn {
+			font-size: 64px;
+	    }
+	}
+
+#rise {
+	opacity:.5;
+	width:5%;
+	height:4%;
+	left:5%;
+	top:90%;
+	z-index:5;
+	margin-left:-1%;
+	position:absolute;
+	z-index:5;
+}
+
+#risebtn {
+    width:auto; 
+    height:100%;   
+}
