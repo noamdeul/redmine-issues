@@ -4,37 +4,15 @@
 <meta charset=utf-8 />
 <!-- *** HTML Template Meta *** -->
 <title>Golda 6</title>
-<meta name="description" content="The School Calendar Template was created to showcase a series of calendar dates, descriptions and supporting images typical of a school environment." />
-
-<!-- Schema.org markup for Google+ -->
-<meta itemprop="name" content="School Calendar">
-<meta itemprop="description" content="The School Calendar Template was created to showcase a series of calendar dates, descriptions and supporting images typical of a school environment.">
-<meta itemprop="image" content="http://goo.gl/GcIJ5Z">
-
-<!-- Twitter Card data -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@RiseVision">
-<meta name="twitter:title" content="School Calendar">
-<meta name="twitter:description" content="The School Calendar Template was created to showcase a series of calendar dates, descriptions and supporting images typical of a school environment.">
-<meta name="twitter:image:src" content="http://goo.gl/GcIJ5Z">
-
-<!-- Open Graph data -->
-<meta property="og:title" content="School Calendar" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://commondatastorage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-templates/school-calendar/school-calendar.html" />
-<meta property="og:image" content="http://goo.gl/GcIJ5Z" />
-<meta property="og:description" content="The School Calendar Template was created to showcase a series of calendar dates, descriptions and supporting images typical of a school environment." />
     
 <!--Style Sheets-->
 <link rel="stylesheet" href="css/main.css" media="screen" type="text/css" /> 
-  <link rel="stylesheet" href="css/animate.css" media="screen" type="text/css" />
-    
-<!--Fav Icon-->
-<link rel="shortcut icon" href="http://rise-vision.github.io/content-templates/favicon.ico" />
+<link rel="stylesheet" href="css/animate.css" media="screen" type="text/css" />
     
 <!--Fonts-->
 <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Alef|Varela+Round" rel="stylesheet" type='text/css'>
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -58,7 +36,7 @@ var app = angular.module("redmineList", []);
 </div>
 	
 <div id="container-gradient"></div>
-    
+
 <!--Header-->
 <div class="cornered">
     <p class="header" id="header1">תקלות פתוחות</p>
@@ -67,52 +45,33 @@ var app = angular.module("redmineList", []);
     
 <!--Container For Left Content-->   
 <div id="container">
-    <!--Oct Calendar-->
+    <!--issues-->
     <div id="left-content1">
         <div ng-app="redmineList" ng-controller="myCtrl">
-            <div class="event" ng-repeat="x in issues">
+        <div class="scroll">
+            <div class="issue" ng-repeat="x in issues">
                 <div class="date">
-                    <p class="month">{{x.id}}</p>
-                    <p class="day">{{x.status}}</p>
+                    <p class="redmine_id">{{x.days_open}} days</p>
+                    <p class="status">{{x.status}}</p>
                 </div>
                 <div class="description">
-                    <p class="title">{{x.subject}}</p>
-                    <p class="time">{{x.created_on}}</p>
+                    <p class="subject">{{x.subject}}</p>
+                    <p class="created_on">opened since: {{x.created_on}} &emsp; id: {{x.id}}</p>
                 </div>
             </div>
+        </div>
         </div> 
     </div>
-    
-    <!--Nov Calendar-->
+    <!--msg-->
     <div id="left-content2">
         <div class="event">
             <div class="date">
-                <p class="month">APR</p>
-                <p class="day">05</p>
+                <p class="month">NOV</p>
+                <p class="day">3</p>
             </div>
             <div class="description">
-                <p class="title">Pep Rally In Gym</p>
-                <p class="time">2:30pm - 3:30pm</p>
-            </div>
-        </div>
-        <div class="event">
-            <div class="date">
-                <p class="month">APR</p>
-                <p class="day">12</p>
-            </div>
-            <div class="description">
-                <p class="title">Donation Drive</p>
-                <p class="time">8:00am - 4:00pm</p>
-            </div>
-        </div>
-        <div class="event">
-            <div class="date">
-                <p class="month">APR</p>
-                <p class="day">22</p>
-            </div>
-            <div class="description">
-                <p class="title">Parent Teacher Conference</p>
-                <p class="time">6:00pm - 8:00pm</p>
+                <p class="title">ישיבת דיירים</p>
+                <p class="time">20:00</p>
             </div>
         </div>
     </div>
@@ -131,16 +90,5 @@ var app = angular.module("redmineList", []);
     </div>
 </div>
     
-<!--Footer Icons-->
-
-<!--Github Icon-->
-<!-- <div id="github">
-    <a type="button" id="gitbtn" href="http://github.com/Rise-Vision/content-templates/tree/master/school-calendar" target="_blank">Contribute <i class="fa fa-github fa-lg "></i></a>
-</div> -->
-    
-<!--Rise Icon-->
-<!-- <div id="rise">
-    <a href="http://www.risevision.com/" target="_blank"><img id="risebtn" src="images/rise-icon.png"/></a>
-</div>   --> 
 </body>
 </html>
