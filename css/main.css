@@ -281,8 +281,8 @@ p.status {
     /*font-family: 'Swanky and Moo Moo', cursive;*/
     text-align: center;
     height: 20%;
-    line-height: 50%;
-    margin-top: 0px;
+    line-height: 100%;
+    margin-top: 5px;
     color: #fff;
     font-size: 20px;
 }
@@ -304,7 +304,7 @@ p.subject {
     text-align: top;
     height: 65%;
     font-size: 46px;
-    line-height: 140%;
+    line-height: 100%;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 5%;

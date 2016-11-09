@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
+
 <!-- *** HTML Template Meta *** -->
 <title>Golda 6</title>
-    
+<meta http-equiv="refresh" content="500">
+<meta charset=utf-8 />
+
 <!--Style Sheets-->
 <link rel="stylesheet" href="css/main.css" media="screen" type="text/css" /> 
 <link rel="stylesheet" href="css/animate.css" media="screen" type="text/css" />
@@ -48,7 +50,7 @@ var app = angular.module("redmineList", []);
     <!--issues-->
     <div id="left-content1">
         <div ng-app="redmineList" ng-controller="myCtrl">
-        <div class="scroll">
+        <!-- <div class="scroll"> -->
             <div class="issue" ng-repeat="x in issues">
                 <div class="date">
                     <p class="redmine_id">{{x.days_open}} days</p>
@@ -59,7 +61,7 @@ var app = angular.module("redmineList", []);
                     <p class="created_on">opened since: {{x.created_on}} &emsp; id: {{x.id}}</p>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
         </div> 
     </div>
     <!--msg-->
