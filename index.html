@@ -24,12 +24,13 @@
 var app = angular.module("redmineList", []);
  app.controller("myCtrl", function($scope) {
  $scope.issues = JSON.parse(data);
+ $scope.messages = JSON.parse(messages);
 });
 </script>
 
 </head>
     
-<body> 
+<body ng-app="redmineList" ng-controller="myCtrl">
 <!--Background Animation-->
 <div id="background-container">	
 <div id="background">
@@ -49,7 +50,6 @@ var app = angular.module("redmineList", []);
 <div id="container">
     <!--issues-->
     <div id="left-content1">
-        <div ng-app="redmineList" ng-controller="myCtrl">
         <!-- <div class="scroll"> -->
             <div class="issue" ng-repeat="x in issues">
                 <div class="date">
@@ -62,18 +62,17 @@ var app = angular.module("redmineList", []);
                 </div>
             </div>
         <!-- </div> -->
-        </div> 
     </div>
     <!--msg-->
     <div id="left-content2">
-        <div class="event">
+        <div class="event" ng-repeat="m in messages">
             <div class="date">
-                <p class="month">NOV</p>
-                <p class="day">3</p>
+                <p class="month">{{m.summary}}</p>
+                <p class="day"></p>
             </div>
             <div class="description">
-                <p class="title">ישיבת דיירים</p>
-                <p class="time">20:00</p>
+                <p class="title">{{m.title}}</p>
+                <p class="time">{{m.description}}</p>
             </div>
         </div>
     </div>
