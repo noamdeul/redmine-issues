@@ -50,28 +50,31 @@ var app = angular.module("redmineList", []);
 <div id="container">
     <!--issues-->
     <div id="left-content1">
-        <!-- <div class="scroll"> -->
+        <div class="scroll">
             <div class="issue" ng-repeat="x in issues">
                 <div class="date">
                     <p class="redmine_id">{{x.days_open}} days</p>
+                    <br>
                     <p class="status">{{x.status}}</p>
                 </div>
-                <div class="description">
+                <div class="issue-description">
                     <p class="subject">{{x.subject}}</p>
+                    <br>
                     <p class="created_on">opened since: {{x.created_on}} &emsp; id: {{x.id}}</p>
                 </div>
             </div>
-        <!-- </div> -->
+        </div>
     </div>
     <!--msg-->
     <div id="left-content2">
         <div class="event" ng-repeat="m in messages">
             <div class="date">
-                <p class="month">{{m.summary}}</p>
-                <p class="day"></p>
+                <p class="month">{{m.date}}</p>
+                <!-- <p class="day"></p> -->
             </div>
             <div class="description">
                 <p class="title">{{m.title}}</p>
+                <br>
                 <p class="time">{{m.description}}</p>
             </div>
         </div>

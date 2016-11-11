@@ -3,11 +3,7 @@ require 'json'
 
 
 def get_issues(project_id, type, key)
-  if project_id
-    query = { project_id: project_id }
-  else
-    query = {}
-  end
+  query = project_id ? { project_id: project_id } : {}
   headers = {
     'X-Redmine-API-Key' => '1bf27c0e69064e411e64a162850b9b101da6621f'
   }
@@ -26,13 +22,11 @@ def get_issues(project_id, type, key)
 
 end
 
-#puts get_issues
-messages = get_issues(nil, 'projects/messages/news.json', 'news').map do |r|
-  # messages = get_issues(2).map do |r|
+messages = get_issues(5, 'issues.json', 'issues').map do |r|
   {
-    'title' => r['title'] ,
-    "description" => r["description"],
-    "summary" => r["summary"]
+    "title" => r["subject"],
+    "description" => r["description"].tr("\n","  ").tr("\r","  "),
+    "date" => r["start_date"]
   }
 end
 

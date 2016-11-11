@@ -35,6 +35,7 @@ body {
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     opacity: .15;
+    z-index: -2;
 }
 
 @-webkit-keyframes "slidein" {
@@ -67,9 +68,6 @@ body {
     transform: translateZ(0);
 }
 
-
-/*school calendar header*/
-
 p.header {
     /*font-family: 'Varela Round', sans-serif;*/
     text-align: left;
@@ -81,6 +79,7 @@ p.header {
     margin-left: 50px;
     line-height: 165%;
     color: #fff;
+    z-index: 4;
 }
 
 #header1 {
@@ -115,14 +114,14 @@ p.header {
     top: 20%;
     left: 5%;
     position: absolute;
-    z-index: 2;
+    z-index: -1;
     -webkit-animation-duration: 60s;
     -webkit-animation-name: fade1;
     -webkit-animation-iteration-count: infinite;
 }
 
 #left-content2 {
-    width: 60%;
+    width: 50%;
     height: 90%;
     top: 20%;
     left: 5%;
@@ -216,8 +215,17 @@ p.header {
     z-index: 3;
 }
 
+.issue-description {
+    width: 95%;
+    height: 100%;
+    top: 0%;
+    left: 15%;
+    position: absolute;
+    z-index: 3;
+}
 
-/* old */
+
+/* msg */
 
 p.day {
     /*font-family: 'Swanky and Moo Moo', cursive;*/
@@ -253,7 +261,7 @@ p.title {
 
 p.time {
     /*font-family: 'Swanky and Moo Moo', cursive;*/
-    text-align: left;
+    text-align: right;
     height: 35%;
     font-size: 34px;
     margin-bottom: 0px;
@@ -264,11 +272,11 @@ p.time {
 }
 
 
-/* new */
+/* issues */
 
 .issue {
     width: 100%;
-    height: 10%;
+    height: 3%;
     top: 0%;
     left: 0%;
     position: relative;
@@ -292,7 +300,7 @@ p.redmine_id {
     /*font-family: 'Swanky and Moo Moo', cursive;*/
     text-align: center;
     height: 35%;
-    font-size: 40px;
+    font-size: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
     line-height: 90%;
@@ -303,12 +311,15 @@ p.subject {
     /*font-family: 'Varela Round', sans-serif;*/
     text-align: top;
     height: 65%;
-    font-size: 46px;
+    font-size: 30px;
     line-height: 100%;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 5%;
     color: #fff;
+    /*position: absolute;*/
+    /*visibility: hidden;*/
+    /*whitespace: nowrap;*/
 }
 
 p.created_on {
@@ -316,9 +327,9 @@ p.created_on {
     /*font-family: 'Swanky and Moo Moo', cursive;*/
     text-align: left;
     height: 35%;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 0px;
-    /*margin-top: 0px;*/
+    margin-top: 0px;
     margin-left: 5%;
     line-height: 90%;
     color: #1f99d5;
@@ -350,7 +361,8 @@ p.created_on {
 
 /* media querry for 1280x850 and 1360x768*/
 
-@media only screen and (min-width: 1280px) {
+
+/*@media only screen and (min-width: 1280px) {
     p.day {
         font-size: 94px;
     }
@@ -363,7 +375,7 @@ p.created_on {
     p.time {
         font-size: 42px;
     }
-    /*p.status {
+    p.status {
         font-size: 94px;
     }
     p.redmine_id {
@@ -374,7 +386,7 @@ p.created_on {
     }
     p.created_on {
         font-size: 42px;
-    }*/
+    }
     p.header {
         font-size: 48px;
     }
@@ -383,12 +395,13 @@ p.created_on {
         border-bottom: 80px solid #1f99d5;
         border-right: 40px solid transparent;
     }
-}
+}*/
 
 
 /* media querry for 1920x1080*/
 
-@media only screen and (min-width: 1920px) {
+
+/*@media only screen and (min-width: 1920px) {
     p.day {
         font-size: 140px;
     }
@@ -401,18 +414,18 @@ p.created_on {
     p.time {
         font-size: 68px;
     }
-    /*p.status {
-        font-size: 94px;
+    p.status {
+        font-size: 140px;
     }
     p.redmine_id {
-        font-size: 52px;
+        font-size: 90px;
     }
     p.subject {
-        font-size: 58px;
+        font-size: 80px;
     }
     p.created_on {
-        font-size: 42px;
-    }*/
+        font-size: 68px;
+    }
     p.header {
         font-size: 68px;
     }
@@ -421,12 +434,13 @@ p.created_on {
         border-bottom: 110px solid #1f99d5;
         border-right: 60px solid transparent;
     }
-}
+}*/
 
 
 /* media querry for 3840x2160*/
 
-@media only screen and (min-width: 3840px) {
+
+/*@media only screen and (min-width: 3840px) {
     p.day {
         font-size: 240px;
     }
@@ -439,18 +453,18 @@ p.created_on {
     p.time {
         font-size: 136px;
     }
-    /*p.status {
-        font-size: 94px;
+    p.status {
+        font-size: 240px;
     }
     p.redmine_id {
-        font-size: 52px;
+        font-size: 180px;
     }
     p.subject {
-        font-size: 58px;
+        font-size: 160px;
     }
     p.created_on {
-        font-size: 42px;
-    }*/
+        font-size: 136px;
+    }
     p.header {
         font-size: 136px;
     }
@@ -462,7 +476,7 @@ p.created_on {
     .skew img {
         height: 2160px;
     }
-}
+}*/
 
 .scroll {
     /* Starting position */
@@ -470,9 +484,9 @@ p.created_on {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
     /* Apply animation to this element */
-    -moz-animation: scroll 60s linear infinite;
-    -webkit-animation: scroll 60s linear infinite;
-    animation: scroll 60s linear infinite;
+    -moz-animation: scroll 50s linear infinite;
+    -webkit-animation: scroll 50s linear infinite;
+    animation: scroll 50s linear infinite;
 }
 
 
@@ -498,9 +512,17 @@ p.created_on {
 
 @keyframes scroll {
     0% {
+        /* Browser bug fix */
+        -moz-transform: translateY(-100%);
+        /* Browser bug fix */
+        -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
     }
     100% {
+        /* Browser bug fix */
+        -moz-transform: translateY(100%);
+        /* Browser bug fix */
+        -webkit-transform: translateY(100%);
         transform: translateY(100%);
     }
 }
