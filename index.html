@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <!-- *** HTML Template Meta *** -->
@@ -7,16 +8,7 @@
 <meta http-equiv="refresh" content="500">
 <meta charset=utf-8 />
 
-<!--Style Sheets-->
-<link rel="stylesheet" href="css/main.css" media="screen" type="text/css" /> 
-<link rel="stylesheet" href="css/animate.css" media="screen" type="text/css" />
-    
-<!--Fonts-->
-<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Alef|Varela+Round" rel="stylesheet" type='text/css'>
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="css/main1.css" media="screen" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script type="text/javascript" src="issues.json"></script>
 
@@ -29,70 +21,41 @@ var app = angular.module("redmineList", []);
 </script>
 
 </head>
-    
 <body ng-app="redmineList" ng-controller="myCtrl">
-<!--Background Animation-->
-<div id="background-container">	
-<div id="background">
-    <!-- <img src="images/pattern.svg"> -->
-</div>
-</div>
-	
-<div id="container-gradient"></div>
 
-<!--Header-->
-<div class="cornered">
-    <p class="header" id="header1">תקלות פתוחות</p>
-    <p class="header" id="header2">הודעות</p>
+<div id="background-container"> 
+<div id="background">
 </div>
-    
-<!--Container For Left Content-->   
-<div id="container">
-    <!--issues-->
-    <div id="left-content1">
-        <div class="scroll">
-            <div class="issue" ng-repeat="x in issues">
-                <div class="date">
-                    <p class="redmine_id">{{x.days_open}} days</p>
-                    <br>
-                    <p class="status">{{x.status}}</p>
-                </div>
-                <div class="issue-description">
-                    <p class="subject">{{x.subject}}</p>
-                    <br>
-                    <p class="created_on">opened since: {{x.created_on}} &emsp; id: {{x.id}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--msg-->
-    <div id="left-content2">
-        <div class="event" ng-repeat="m in messages">
-            <div class="date">
-                <p class="month">{{m.date}}</p>
-                <!-- <p class="day"></p> -->
-            </div>
-            <div class="description">
-                <p class="title">{{m.title}}</p>
-                <br>
-                <p class="time">{{m.description}}</p>
-            </div>
-        </div>
-    </div>
 </div>
-    
-<!--Right Images-->
-<div id="right-container1">
-    <div class="skew">
-        <img src="images/image-building.jpg">
-    </div>
-</div>
-	
-<div id="right-container2">
-    <div class="skew">
-        <img src="images/image-building2.jpg">
-    </div>
-</div>
-    
+
+<section>
+  <div class="cornered">
+  <p class="header" id="header1">תקלות פתוחות</p>
+  </div>
+  <br>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0" dir="rtl">
+      <thead>
+        <tr>
+          <th>סד׳</th>
+          <th></th>
+          <th>נושא</th>
+          <th>סטאטוס</th>
+          <th>כמה ימים פתוח</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="x in issues">
+          <td style="text-align: center;">{{$index + 1}}</td>
+          <td></td>
+          <td>{{x.subject}}</td>
+          <td style="text-align: center;">{{x.status}}</td>
+          <td style="text-align: center;">{{x.days_open}} ימים</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 </body>
+
 </html>
