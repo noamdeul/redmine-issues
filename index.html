@@ -23,6 +23,7 @@
           app.controller("myCtrl", function($scope) {
             $scope.issues = JSON.parse(data);
             $scope.messages = JSON.parse(messages);
+            $scope.weather = JSON.parse(weather);
           });
         </script>
         <script type="text/javascript">
@@ -47,8 +48,21 @@
       <div id="background">
       </div>
     </div>
+    <!-- youtube music -->
     <iframe allowfullscreen="" frameborder="0" height="0" src="https://www.youtube.com/embed/opC2ybXb13s?rel=0&controls=0&showinfo=0&autoplay=1&loop=1" width="0">
     </iframe>
+    <!-- time and date -->
+    <div id="timeanddate">
+      <label style="margin-top: 20px;">
+        {{weather["temp_c"]}}°
+      </label>
+      <img src='{{weather["icon_url"]}}'>
+      </img>
+      <iframe allowtransparency="true" frameborder="0" height="50" id="date" src="http://free.timeanddate.com/clock/i5nmzu63/n676/tlil18/fn14/fs42/fcfeb423/tct/pct/pd3/tt1/tw0/tm2" width="414">
+      </iframe>
+      <iframe allowtransparency="true" frameborder="0" height="50" id="clock" src="http://free.timeanddate.com/clock/i5nmzu63/n676/tlil18/fn14/fs42/fcfeb423/tct/pct/pd3/th1" width="200">
+      </iframe>
+    </div>
     <section>
       <div class="cornered">
         <p class="header" id="header1">
@@ -130,4 +144,6 @@
       </br>
     </section>
   </body>
+  <footer>
+  </footer>
 </html>

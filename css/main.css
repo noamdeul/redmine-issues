@@ -87,7 +87,23 @@ body {
 }
 
 section {
-  margin: 10px;
+  margin: 20px;
+}
+
+#timeanddate {
+  position: absolute;
+  text-align: right;
+  right: 20px;
+  top: 35px;
+  /*left: 0;*/
+  height: 60px;
+  width: 100%;
+  color: #feb423;
+  font-size: 55px;
+  /*height: 0px;*/
+  /*border-bottom: 62px solid #000;*/
+  /*border-left: 32px solid transparent;*/
+  /*-webkit-box-shadow: 0px 7px 5px -7px rgba(0, 0, 0, 0.2);*/
 }
 
 #background-container {
@@ -131,7 +147,7 @@ section {
 
 .cornered {
   /*position: absolute;*/
-  margin-top: 3%;
+  margin-top: 0px;
   left: 95%;
   right: 10%;
   width: 380px;
@@ -294,7 +310,7 @@ p.time {
   color: #1f99d5;
 }
 
-img {
+#pic {
   max-width: 100%;
   max-height: 100%;
   display: block;
