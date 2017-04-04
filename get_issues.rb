@@ -35,7 +35,25 @@ def get_weather
 
 end
 
+def get_image
+  headers = { 'X-Redmine-API-Key' => @config['redmine_api_key'] }
+  query = { project_id: 5 }
 
+  response = HTTParty.get(
+    "http://#{@config['redmine_url']}/issues/534.json?include=attachments",
+    :query => query,
+    :headers => headers
+  )
+
+  link = response.parsed_response["issue"]["attachments"].last["content_url"]
+
+  pic = HTTParty.get(
+    link,
+    :headers => headers
+  )
+
+  File.open('images/page3.jpg', 'w') { |file| file.write(pic) }
+end
 
 messages = get_issues(5, 'issues.json', 'issues').map do |r|
   {
@@ -56,6 +74,8 @@ issues = get_issues(1, "issues.json", "issues").map do |r|
 end
 
 weather = get_weather
+
+get_image
 
 # open and write to a file with ruby
 open('issues.json', 'w') { |f|
